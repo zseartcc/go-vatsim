@@ -7,13 +7,15 @@ import (
 type status struct {
 	url0   []string
 	url1   []string
+	json3  []string
 	metar0 string
 }
 
 func parseStatus(lines []string) (*status, error) {
 	status := status{
-		url0: []string{},
-		url1: []string{},
+		url0:  []string{},
+		url1:  []string{},
+		json3: []string{},
 	}
 
 	for _, line := range lines {
@@ -28,6 +30,8 @@ func parseStatus(lines []string) (*status, error) {
 			status.url0 = append(status.url0, val)
 		case "url1":
 			status.url1 = append(status.url1, val)
+		case "json3":
+			status.json3 = append(status.json3, val)
 		case "metar0":
 			status.metar0 = val
 		}

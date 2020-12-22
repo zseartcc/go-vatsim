@@ -1,30 +1,65 @@
 package govatsim
 
 import (
+	"encoding/json"
 	"errors"
 	"io/ioutil"
 	"math/rand"
 	"net/http"
 	"strings"
 	"time"
+
+	json3mapper "github.com/zseartcc/go-vatsim/mapper/json3"
+	"github.com/zseartcc/go-vatsim/model/json3"
 )
 
 const (
 	commentChar       = ';'
 	keyValueSeparator = "="
-	statusEndpoint    = "http://status.vatsim.net/"
+	statusEndpoint    = "https://status.vatsim.net/"
 )
 
 type VATSIM struct {
-	refreshRate time.Duration
-	status      *status
-	url0        *url0
+	refreshRate   time.Duration
+	status        *status
+	url0          *url0
+	json3         *json3.JSON3
+	controllerMap map[int]*json3.Controller
+	pilotMap      map[int]*json3.Pilot
 }
 
 func NewVATSIM() *VATSIM {
 	return &VATSIM{
-		refreshRate: time.Duration(90) * time.Second,
+		refreshRate: time.Duration(30) * time.Second,
 	}
+}
+
+func (v *VATSIM) Controller(controllerCID int) (*json3.Controller, error) {
+	err := v.refreshJSON3()
+	if err != nil {
+		return nil, err
+	}
+
+	controller, ok := v.controllerMap[controllerCID]
+	if !ok {
+		return nil, errors.New("controller not found")
+	}
+
+	return controller, nil
+}
+
+func (v *VATSIM) Pilot(pilotCID int) (*json3.Pilot, error) {
+	err := v.refreshJSON3()
+	if err != nil {
+		return nil, err
+	}
+
+	pilot, ok := v.pilotMap[pilotCID]
+	if !ok {
+		return nil, errors.New("pilot not found")
+	}
+
+	return pilot, nil
 }
 
 func (v *VATSIM) Clients() ([]Client, error) {
@@ -82,6 +117,55 @@ func (v *VATSIM) initStatus() error {
 		return err
 	}
 
+	return nil
+}
+
+func getJSON(url string, target interface{}) error {
+	res, err := http.Get(url)
+	if err != nil {
+		return err
+	}
+
+	body, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		return err
+	}
+
+	err = json.Unmarshal(body, target)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (v *VATSIM) refreshJSON3() error {
+	err := v.initStatus()
+	if err != nil {
+		return err
+	}
+
+	if v.json3 != nil {
+		update, err := time.Parse(json3.TimestampLayout, v.json3.General.UpdateTimestamp)
+		if err != nil {
+			return err
+		}
+
+		if time.Now().Before(update.Add(v.refreshRate)) {
+			return nil
+		}
+	}
+
+	url := v.status.json3[rand.Intn(len(v.status.json3))]
+	res := json3.JSON3{}
+	err = getJSON(url, &res)
+	if err != nil {
+		return err
+	}
+
+	v.json3 = &res
+	v.controllerMap = json3mapper.ControllersToMap(res.Controllers)
+	v.pilotMap = json3mapper.PilotsToMap(res.Pilots)
 	return nil
 }
 

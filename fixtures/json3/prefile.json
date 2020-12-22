@@ -1,0 +1,20 @@
+{
+  "cid": 1333643,
+  "name": "jack neal",
+  "callsign": "UKV1119",
+  "flight_plan": {
+    "flight_rules": "I",
+    "aircraft": "CRJ7/M-SDFGIRWY/S",
+    "departure": "LFPG",
+    "arrival": "EGBB",
+    "alternate": "EGCN",
+    "cruise_tas": "433",
+    "altitude": "26000",
+    "deptime": "2222",
+    "enroute_time": "0058",
+    "fuel_time": "0214",
+    "remarks": "PBN/D1 DOF/201221 REG/GFLHD EET/EGTT0019 OPR/UKV PER/C RMK/TCAS SIMBRIEF /V/",
+    "route": "OPALE UT421 KESAX UT426 DIMAL UT10 ALESO T420 BUZAD"
+  },
+  "last_updated": "2020-12-21T21:37:19.4329071Z"
+}

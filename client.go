@@ -8,7 +8,7 @@ import (
 
 type ClientType string
 type FacilityType int
-type Rating int
+type ClientRating int
 
 const (
 	clientSeparator = ":"
@@ -59,7 +59,7 @@ type Client struct {
 	PlannedDestinationAirport          string
 	Server                             string
 	ProtocolRevision                   string
-	Rating                             Rating
+	Rating                             ClientRating
 	Transponder                        string
 	FacilityType                       FacilityType
 	VisualRange                        string
@@ -178,7 +178,7 @@ func parseClient(line string) (*Client, error) {
 		PlannedDestinationAirport:          fields[13],
 		Server:                             fields[14],
 		ProtocolRevision:                   fields[15],
-		Rating:                             Rating(rating),
+		Rating:                             ClientRating(rating),
 		Transponder:                        fields[17],
 		FacilityType:                       FacilityType(facilityType),
 		VisualRange:                        fields[19],

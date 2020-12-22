@@ -1,0 +1,135 @@
+{
+  "general": {
+    "version": 3,
+    "reload": 1,
+    "update": "20201221233639",
+    "update_timestamp": "2020-12-21T23:36:39.7625762Z",
+    "connected_clients": 875,
+    "unique_users": 827
+  },
+  "pilots": [
+    {
+      "cid": 1429377,
+      "name": "Arya WIII",
+      "callsign": "PKJMB",
+      "server": "SINGAPORE",
+      "pilot_rating": 0,
+      "latitude": 33.4059,
+      "longitude": 41.16989,
+      "altitude": 37229,
+      "groundspeed": 501,
+      "transponder": "2000",
+      "heading": 92,
+      "qnh_i_hg": 30.18,
+      "qnh_mb": 1022,
+      "flight_plan": {
+        "flight_rules": "I",
+        "aircraft": "A21N/M-SDE3FGHIRWY/LB1",
+        "departure": "LFBO",
+        "arrival": "VRMM",
+        "alternate": "VCBI",
+        "cruise_tas": "393",
+        "altitude": "37000",
+        "deptime": "1935",
+        "enroute_time": "0936",
+        "fuel_time": "1151",
+        "remarks": "PBN/A1B1C1D1O1S1 DOF/201221 REG/PKJMB EET/LFMM0013 LFFF0027 LIRR0052 LIBB0126 LGGG0150 LTBB0245 LGGG0247 LTBB0254 LGGG0257 LCCC0302 OLBB0335 OSTT0341 ORBB0357 OKAC0501 OIIX0509 OMAE0543 OOMM0600 VABF0644 VRMF0856 SEL/EHFL PER/C RALT/OOMS VOBG RMK/TCAS SIMBRIEF /V/",
+        "route": "AFRIC G393 FJR/N0447F350 UL127 PADKO/N0448F360 UL127 STP/N0447F350 UL127 SODRI UM728 RAPUR/N0445F370 UM728 DOKAR DCT SUNEV DCT MEDAL DCT AMSOR DCT TIGRA UL995 KRK UL53 KOR DCT BONEK M601 BALMA UR655 CAK UN310 LATEB J222 BASEM R785 ABBAS G202 PUSTO M203 ILMAP UP975 ULDUR UM688 SIDAD R784 IMDAT B416 ORSAR R784 TATLA L223 TARDI N629 GIDAN P570 KITAL L894 LELEM L3B"
+      },
+      "logon_time": "2020-12-21T20:10:32.262454Z",
+      "last_updated": "2020-12-21T23:36:35.5300061Z"
+    }
+  ],
+  "controllers": [
+    {
+      "cid": 881386,
+      "name": "Santiago Villacorta Franchini",
+      "callsign": "BAIRES_CTR",
+      "frequency": "125.900",
+      "facility": 6,
+      "rating": 7,
+      "server": "USA-EAST",
+      "visual_range": 150,
+      "text_atis": [
+        "BAIRES RADAR"
+      ],
+      "last_updated": "2020-12-21T23:36:28.6085229Z",
+      "logon_time": "2020-12-21T20:10:38.7630289Z"
+    }
+  ],
+  "atis": [
+    {
+      "cid": 1474386,
+      "name": "Tim Rauter",
+      "callsign": "LJLJ_ATIS",
+      "frequency": "128.170",
+      "facility": 4,
+      "rating": 3,
+      "server": "GERMANY-1",
+      "visual_range": 0,
+      "atis_code": "H",
+      "text_atis": [
+        "THIS IS LJUBLJANA INFORMATION H MET REPORT TIME 2200",
+        "EXPECT ILS APPROACH RUNWAY 30 LANDING RUNWAY 30",
+        "DEPARTURE RUNWAY 12 AND 30 TRL 120 WIND 260 DEGREES 2 KNOTS",
+        "VISIBILITY 800 METERS RUNWAY VISUAL RANGE RUNWAY 30 1300",
+        "METERS DOWNGRADING FOG NO CLOUD BASE AVAILABLE TEMPERATURE 4",
+        "DEW POINT 4 QNH 1025 TREND NOSIG INFORMATION H OUT"
+      ],
+      "last_updated": "2020-12-21T23:36:34.1543025Z",
+      "logon_time": "2020-12-21T20:10:32.8722278Z"
+    }
+  ],
+  "servers": [
+    {
+      "ident": "UK-1",
+      "hostname_or_ip": "209.97.177.84",
+      "location": "London, UK",
+      "name": "UK-1",
+      "clients_connection_allowed": 1
+    }
+  ],
+  "prefiles": [
+    {
+      "cid": 1333643,
+      "name": "jack neal",
+      "callsign": "UKV1119",
+      "flight_plan": {
+        "flight_rules": "I",
+        "aircraft": "CRJ7/M-SDFGIRWY/S",
+        "departure": "LFPG",
+        "arrival": "EGBB",
+        "alternate": "EGCN",
+        "cruise_tas": "433",
+        "altitude": "26000",
+        "deptime": "2222",
+        "enroute_time": "0058",
+        "fuel_time": "0214",
+        "remarks": "PBN/D1 DOF/201221 REG/GFLHD EET/EGTT0019 OPR/UKV PER/C RMK/TCAS SIMBRIEF /V/",
+        "route": "OPALE UT421 KESAX UT426 DIMAL UT10 ALESO T420 BUZAD"
+      },
+      "last_updated": "2020-12-21T21:37:19.4329071Z"
+    }
+  ],
+  "facilities": [
+    {
+      "id": 6,
+      "short": "CTR",
+      "long": "Enroute"
+    }
+  ],
+  "ratings": [
+    {
+      "id": 5,
+      "short": "C1",
+      "long": "Enroute Controller"
+    }
+  ],
+  "pilot_ratings": [
+    {
+      "id": 1,
+      "short_name": "PPL",
+      "long_name": "Private Pilot Licence"
+    }
+  ]
+}
