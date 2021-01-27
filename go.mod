@@ -1,4 +1,4 @@
-module gogs.zseartcc.org/Seattle/go-vatsim
+module github.com/zseartcc/go-vatsim
 
 go 1.14
 

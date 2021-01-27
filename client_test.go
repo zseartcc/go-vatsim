@@ -3,7 +3,7 @@ package govatsim
 import (
 	"testing"
 
-	"gogs.zseartcc.org/Seattle/go-vatsim/fixtures"
+	"github.com/zseartcc/go-vatsim/fixtures"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
