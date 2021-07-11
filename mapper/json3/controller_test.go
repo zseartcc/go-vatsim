@@ -14,9 +14,15 @@ func Test_ControllersToMap(t *testing.T) {
 			CID:  123,
 			Name: "Test Controller",
 		},
+		{
+			CID:  234,
+			Name: "Controller",
+		},
 	})
 
 	assert.NotNil(t, controllerMap[123])
 	assert.Equal(t, "Test Controller", controllerMap[123].Name)
+	assert.NotNil(t, controllerMap[234])
+	assert.Equal(t, "Controller", controllerMap[234].Name)
 	assert.Nil(t, controllerMap[456])
 }

@@ -6,8 +6,8 @@ import (
 
 func PilotsToMap(pilots []json3.Pilot) map[int]*json3.Pilot {
 	pilotMap := map[int]*json3.Pilot{}
-	for _, pilot := range pilots {
-		pilotMap[pilot.CID] = &pilot
+	for i, pilot := range pilots {
+		pilotMap[pilot.CID] = &pilots[i]
 	}
 
 	return pilotMap
